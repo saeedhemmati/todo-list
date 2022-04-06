@@ -12,6 +12,9 @@ const ColorBox = styled.div`
   height: 50px;
   border-radius: 4px;
   margin-right: 10px;
+  &:first-of-type {
+    margin-left: 10px;
+  }
 `;
 
 const SubmitButtonContainer = styled.div`
@@ -151,22 +154,25 @@ const ToDo = () => {
             name="priority"
             value={Priority.HIGH}
             onChange={setTodoPriority}
+            id="high"
           />
-          High
+          <label htmlFor="high">High</label>
           <input
             type="radio"
             name="priority"
             value={Priority.MEDIUM}
             onChange={setTodoPriority}
+            id="medium"
           />
-          Medium
+          <label htmlFor="medium">Medium</label>
           <input
             type="radio"
+            id="low"
             name="priority"
             value={Priority.Low}
             onChange={setTodoPriority}
           />
-          Low
+          <label htmlFor="low">Low</label>
         </div>
         <SubmitButtonContainer>
           <button type="submit">Add</button>
